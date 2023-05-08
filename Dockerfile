@@ -5,4 +5,4 @@ COPY bun.lockb bun.lockb
 RUN bun install
 COPY . .
 EXPOSE 8080
-ENTRYPOINT ["bun", "run", "server.ts"]
+ENTRYPOINT ["bun", "run", "dotfiler.ts"]
