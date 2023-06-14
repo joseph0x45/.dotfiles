@@ -23,11 +23,14 @@ action=$1
 
 if [[ "new" == "$action" ]]; then
     if [[ -z "$3" ]]; then
-        priority="due"
+        priority="lowest"
     else
         priority=$3
     fi
-    echo "$priority"
+    new_task="$2<->$priority<->due"
+    echo "$new_task" >> "$storage"
+    echo "New Task added"
+
 fi
 
 if [[ "set" == "$action" ]]; then
