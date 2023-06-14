@@ -20,13 +20,16 @@ fi
 # user interface: tdm set <task_name | task_id> status <status> (status can be done or due)
 
 action=$1
-echo "$action"
 
 if [[ "new" == "$action" ]]; then
-    priority=$( if [[ -z "$3" ]]; then echo "due"; else echo "$3" )
+    if [[ -z "$3" ]]; then
+        priority="due"
+    else
+        priority=$3
+    fi
     echo "$priority"
 fi
 
 if [[ "set" == "$action" ]]; then
-    _
+    :
 fi
