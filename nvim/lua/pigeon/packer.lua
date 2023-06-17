@@ -48,5 +48,4 @@ return require('packer').startup(function(use)
                 ts_update()
             end,}
         use("terrortylor/nvim-comment")
-        use 'andweeb/presence.nvim'
 end)
