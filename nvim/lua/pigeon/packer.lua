@@ -49,5 +49,5 @@ return require('packer').startup(function(use)
             end,}
         use("terrortylor/nvim-comment")
         use "lukas-reineke/indent-blankline.nvim"
-        use {'neoclide/coc.nvim', branch= 'release'}
+        use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 end)
