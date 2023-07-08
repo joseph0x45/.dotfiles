@@ -28,6 +28,15 @@ if [[ "$arg1" == "link" ]]; then
     tmux attach-session -t "$arg2"
 fi
 
-if [[ "$arg1" == "resume" ]]; then
-    tmux run-shell "tmux-resurrect restore"
+if [[ "$arg1" == "kill" ]]; then
+    arg2=$2
+    if [ -z "$arg2" ]; then
+        echo "You have to specify the session name"
+        exit
+    fi
+    tmux kill-session -t "$arg2"
 fi
+
+# if [[ "$arg1" == "resume" ]]; then
+#     tmux run-shell "tmux-resurrect restore"
+# fi
