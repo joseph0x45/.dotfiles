@@ -2,6 +2,10 @@
 
 arg1=$1
 
+if [[ "$arg1" == "version" ]]; then
+    echo "tmx 0.0.1 by TheWisePigeon<https://github.com/TheWisePigeon>"
+fi
+
 if [[ "$arg1" == "ls" ]]; then
     tmux ls
 fi
