@@ -37,6 +37,14 @@ if [[ "$arg1" == "kill" ]]; then
     tmux kill-session -t "$arg2"
 fi
 
+if [[ "$arg1" == "restore" ]]; then
+    if [ -z "${TMUX}" ]; then
+        echo "You are not in a tmux session"
+        exit
+    fi
+    xdotool key ctrl+b ctrl+r
+fi
+
 # if [[ "$arg1" == "resume" ]]; then
 #     tmux run-shell "tmux-resurrect restore"
 # fi
