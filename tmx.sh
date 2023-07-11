@@ -45,6 +45,10 @@ if [[ "$arg1" == "restore" ]]; then
     xdotool key ctrl+b ctrl+r
 fi
 
-# if [[ "$arg1" == "resume" ]]; then
-#     tmux run-shell "tmux-resurrect restore"
-# fi
+if [[ "$arg1" == "save" ]]; then
+    if [ -z "${TMUX}" ]; then
+        echo "You are not in a tmux session"
+        exit
+    fi
+    xdotool key ctrl+b ctrl+s
+fi
