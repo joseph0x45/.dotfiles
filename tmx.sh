@@ -52,3 +52,11 @@ if [[ "$arg1" == "save" ]]; then
     fi
     xdotool key ctrl+b ctrl+s
 fi
+
+if [[ "$arg1" == "quit" ]]; then
+    if [ -z "${TMUX}" ]; then
+        echo "You are not in a tmux session"
+        exit
+    fi
+    xdotool key ctrl+b d
+fi
