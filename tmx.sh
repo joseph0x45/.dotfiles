@@ -10,6 +10,11 @@ if [[ "$arg1" == "ls" ]]; then
     tmux ls
 fi
 
+if [[ "$arg1" == "init" ]]; then
+    tmux
+    tmx restore
+fi
+
 if [[ "$arg1" == "new" ]]; then
     arg2=$2
     if [ -z "$arg2" ]; then
