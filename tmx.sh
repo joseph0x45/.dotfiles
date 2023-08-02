@@ -11,8 +11,7 @@ if [[ "$arg1" == "ls" ]]; then
 fi
 
 if [[ "$arg1" == "init" ]]; then
-    tmux
-    tmx restore
+    tmux && tmx restore
 fi
 
 if [[ "$arg1" == "new" ]]; then
