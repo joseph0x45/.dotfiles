@@ -12,6 +12,5 @@ vim.keymap.set("i", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("v", "<C-s>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+  vim.cmd("so")
 end)
-
