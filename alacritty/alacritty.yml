@@ -13,8 +13,9 @@ mouse:
   hide_when_typing: true
 
 font:
+  family: "Monospace"
   normal:
-    family:  JetBrainsMono Nerd Font 
+    family:  "JetBrainsMono Nerd Font" 
   size: 12.0
 
 # Colors (ArcoLinux)
