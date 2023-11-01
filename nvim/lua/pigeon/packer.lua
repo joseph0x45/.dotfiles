@@ -51,4 +51,5 @@ return require('packer').startup(function(use)
         use "lukas-reineke/indent-blankline.nvim"
         use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
         use({ 'tpope/vim-fugitive' })
+        use({ 'windwp/nvim-ts-autotag' })
       end)
