@@ -15,7 +15,7 @@ mouse:
 font:
   family: "Monospace"
   normal:
-    family:  "JetBrainsMono Nerd Font" 
+    family:  "JetBrainsMono NF" 
   size: 11.0
 
 # Colors (ArcoLinux)
