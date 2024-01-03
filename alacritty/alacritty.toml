@@ -26,7 +26,6 @@ foreground = "#a9b1d6"
 TERM = "xterm-256color"
 
 [font]
-family = "Monospace"
 size = 11.0
 
 [font.normal]
@@ -37,7 +36,6 @@ action = "ToggleFullscreen"
 key = "F11"
 
 [mouse]
-enabled = false
 hide_when_typing = true
 
 [scrolling]
