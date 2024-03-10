@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
     end,}
     use("terrortylor/nvim-comment")
     use "lukas-reineke/indent-blankline.nvim"
-    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
     use({ 'tpope/vim-fugitive' })
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
