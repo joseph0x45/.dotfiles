@@ -64,3 +64,13 @@ if [[ "$arg1" == "quit" ]]; then
     fi
     xdotool key ctrl+b d
 fi
+
+if [[ "$arg1" == "clear" ]]; then
+    if [ -z "${TMUX}" ]; then
+        echo "Clearing all tmux sessions"
+        tmux_process=$(pgrep tmux)
+        echo "$tmux_process"
+        echo "kill -9 $tmux_process"
+        exit
+    fi
+fi

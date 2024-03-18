@@ -55,7 +55,8 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-exec feh --bg-scale ~/.dotfiles/bg.jpg
+exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/bg.jpg)
+exec --no-startup-id alacritty -e tmux new-session -s bozo
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -177,7 +178,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
+assign [class="alacritty"] $ws1
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
