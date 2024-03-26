@@ -8,7 +8,9 @@ require("presence").setup({
   enable_line_number  = false,                      
   blacklist           = {},                         
   buttons             = true,                       
-  file_assets         = {},                         
+  file_assets         = {
+    gleam = {"Gleam", "https://gleam.run/images/lucy/lucy.svg"},
+  },                         
   show_time           = true,                       
   editing_text        = "Editing %s",               
   file_explorer_text  = "Browsing %s",            
