@@ -37,5 +37,4 @@ return require('packer').startup(function(use)
     use({ 'tpope/vim-fugitive' })
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
-    use 'gleam-lang/gleam.vim'
   end)
