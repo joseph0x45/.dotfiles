@@ -9,7 +9,7 @@ require("presence").setup({
   blacklist           = {},                         
   buttons             = true,                       
   file_assets         = {
-    gleam = {"Gleam", "https://gleam.run/images/lucy/lucy.svg"},
+    gleam = {"Gleam", "https://github.com/TheWisePigeon/.dotfiles/blob/main/gleam.png?raw=true"},
   },                         
   show_time           = true,                       
   editing_text        = "Editing %s",               
