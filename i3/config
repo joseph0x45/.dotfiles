@@ -55,7 +55,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/bg.jpg)
+# exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/dark-moon.jpg)
 exec --no-startup-id alacritty --working-directory /home/thewisepigeon/code/ -e tmux new-session -s code
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec

@@ -39,9 +39,9 @@ key = "F11"
 hide_when_typing = true
 
 [scrolling]
-history = 50000
+history = 100000
 multiplier = 3
 
 [window]
-opacity = 0.7
+opacity = 0.0
 startup_mode = "Windowed"
