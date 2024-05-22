@@ -39,7 +39,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # Start Applications
 exec_always --no-startup-id picom &
 exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/bg.jpg)
-exec --no-startup-id alacritty --working-directory /home/thewisepigeon/code/ -e tmux new-session -s code
+exec --no-startup-id alacritty --working-directory /home/$USER/code/ -e tmux new-session -s code
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+Print --release exec --no-startup-id flameshot
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -229,3 +229,5 @@ bar {
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
+# Display everything on monitor
+exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-2 --auto
