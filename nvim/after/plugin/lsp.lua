@@ -9,7 +9,7 @@ lsp.ensure_installed({
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 
-local servers = { 'gopls', 'ccls', 'cmake', 'tsserver', 'templ' }
+local servers = { }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
