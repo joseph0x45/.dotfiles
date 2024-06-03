@@ -59,8 +59,8 @@ exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/bg.jpg)
 exec --no-startup-id alacritty --working-directory /home/$USER/code/ -e tmux new-session -s code
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+t exec --no-startup-id pkill picom
-bindsym $mod+Ctrl+t exec --no-startup-id picom -b
+# bindsym $mod+t exec --no-startup-id pkill picom
+# bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Shift+Print --release exec --no-startup-id spectacle
@@ -345,7 +345,7 @@ bar {
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle
 # Display everything on monitor if set
-exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-2 --auto
+# exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-2 --auto
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
