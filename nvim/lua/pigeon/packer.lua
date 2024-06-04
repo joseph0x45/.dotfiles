@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use("folke/tokyonight.nvim")
   use("theprimeagen/harpoon")
   use("m4xshen/autoclose.nvim")
   use {
@@ -34,8 +33,8 @@ return require('packer').startup(function(use)
     end,}
     use("terrortylor/nvim-comment")
     use "lukas-reineke/indent-blankline.nvim"
-    use({ 'tpope/vim-fugitive' })
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
-    use 'i3d/vim-jimbothemes'
+    -- use 'i3d/vim-jimbothemes'
+    use { "ellisonleao/gruvbox.nvim" }
   end)
