@@ -36,5 +36,5 @@ return require('packer').startup(function(use)
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
     -- use 'i3d/vim-jimbothemes'
-    use { "ellisonleao/gruvbox.nvim" }
+    -- use { "ellisonleao/gruvbox.nvim" }
   end)
