@@ -35,5 +35,5 @@ return require('packer').startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
-    use "olimorris/onedarkpro.nvim"
+    use({ "rose-pine/neovim", as = "rose-pine" })
   end)
