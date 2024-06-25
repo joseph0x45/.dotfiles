@@ -22,6 +22,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Start Applications
 exec --no-startup-id (sleep 1 && feh --bg-scale ~/.dotfiles/bg.jpg)
+exec --no-startup-id volumeicon
 exec --no-startup-id alacritty --working-directory /home/$USER/code/ -e tmux new-session -s code
 bindsym $mod+Shift+Print --release exec --no-startup-id flameshot
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
