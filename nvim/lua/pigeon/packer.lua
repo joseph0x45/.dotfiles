@@ -36,4 +36,5 @@ return require('packer').startup(function(use)
     use({ 'windwp/nvim-ts-autotag' })
     use 'andweeb/presence.nvim'
     use({ "rose-pine/neovim", as = "rose-pine" })
+    use "thewisepigeon/md_todo"
   end)
