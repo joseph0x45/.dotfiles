@@ -46,5 +46,5 @@ history = 100000
 multiplier = 3
 
 [window]
-opacity = 0.95
+opacity = 1
 startup_mode = "Windowed"
