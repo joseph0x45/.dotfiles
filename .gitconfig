@@ -1,0 +1,17 @@
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[user]
+	email = zozozozeph@gmail.com
+	name = joseph0x45
+[core]
+  editor = nvim
+[alias]
+  push = push --ipv4
