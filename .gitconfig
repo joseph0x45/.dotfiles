@@ -13,5 +13,3 @@
 	name = joseph0x45
 [core]
   editor = nvim
-[alias]
-  push = push --ipv4
