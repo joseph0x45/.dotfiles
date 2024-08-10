@@ -8,4 +8,3 @@ vim.keymap.set("n", "<leader>q", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<leader>w", function() ui.nav_file(2) end, {noremap=true})
 vim.keymap.set("n", "<leader>e", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<leader>r", function() ui.nav_file(4) end)
-
