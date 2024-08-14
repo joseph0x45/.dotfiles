@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define MAX_BUFFER_SIZE 1024
-#define MOD 10
 
 typedef struct {
   char *index;
@@ -89,6 +88,12 @@ int main(int argc, char **argv) {
   Sink running_sink = get_running_sink(sinks, num_of_sinks);
   if (strcmp(running_sink.state, "INVALID") == 0) {
     printf("No running sink found. Play something to get a sink running\n");
+  }
+  if (argc == 2) {
+    char *volume = argv[1];
+    char cmd[MAX_BUFFER_SIZE];
+    sprintf(cmd, "pactl set-sink-volume %s %s%s", running_sink.name, volume,
+            "%");
   }
   return 0;
 }
