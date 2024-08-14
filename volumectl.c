@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define MAX_BUFFER_SIZE 1024
+#define MOD 10
 
 typedef struct {
   char *index;
@@ -34,6 +35,17 @@ void display_sink(Sink s) {
   printf("Channels: %s\n", s.channels);
   printf("Sample Rate: %s\n", s.sample_rate);
   printf("State: %s\n", s.state);
+}
+
+Sink get_running_sink(Sink sinks[], int size) {
+  Sink s;
+  s.state = "INVALID";
+  for (int i = 0; i < size; i++) {
+    if (strcmp(sinks[i].state, "RUNNING") == 0) {
+      return sinks[i];
+    }
+  }
+  return s;
 }
 
 int main(int argc, char **argv) {
@@ -74,8 +86,9 @@ int main(int argc, char **argv) {
   for (int i = 0; i < num_of_sinks; i++) {
     sinks[i] = parse_sink(lines[i]);
   }
-  for (int i = 0; i < num_of_sinks; i++) {
-    display_sink(sinks[i]);
+  Sink running_sink = get_running_sink(sinks, num_of_sinks);
+  if (strcmp(running_sink.state, "INVALID") == 0) {
+    printf("No running sink found. Play something to get a sink running\n");
   }
   return 0;
 }
