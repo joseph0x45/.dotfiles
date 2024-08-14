@@ -16,7 +16,24 @@ typedef struct {
 
 Sink parse_sink(char *buffer) {
   Sink s;
+  s.index = strtok(buffer, " \t");
+  s.name = strtok(NULL, " \t");
+  s.audio_driver = strtok(NULL, " \t");
+  s.sample_format = strtok(NULL, " \t");
+  s.channels = strtok(NULL, " \t");
+  s.sample_rate = strtok(NULL, " \t");
+  s.state = strtok(NULL, " \t");
   return s;
+}
+
+void display_sink(Sink s) {
+  printf("Index: %s\n", s.index);
+  printf("Name: %s\n", s.name);
+  printf("Audio Driver: %s\n", s.audio_driver);
+  printf("Sample format: %s\n", s.sample_format);
+  printf("Channels: %s\n", s.channels);
+  printf("Sample Rate: %s\n", s.sample_rate);
+  printf("State: %s\n", s.state);
 }
 
 int main(int argc, char **argv) {
@@ -49,10 +66,16 @@ int main(int argc, char **argv) {
     return 1;
   }
   int num_of_sinks = atoi(strtok(buffer, "\n"));
+  char *lines[num_of_sinks];
   Sink sinks[num_of_sinks];
-  char *token;
-  while ((token = strtok(NULL, "\n")) != NULL) {
-    char *t = strtok(token, " ");
+  for (int i = 0; i < num_of_sinks; i++) {
+    lines[i] = strtok(NULL, "\n");
+  }
+  for (int i = 0; i < num_of_sinks; i++) {
+    sinks[i] = parse_sink(lines[i]);
+  }
+  for (int i = 0; i < num_of_sinks; i++) {
+    display_sink(sinks[i]);
   }
   return 0;
 }
