@@ -1,2 +1,2 @@
 build-volumectl:
-	gcc -o -Wall -pedantic volumectl.c -o volumectl
+	gcc -Wall -pedantic volumectl.c
