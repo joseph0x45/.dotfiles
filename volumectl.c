@@ -94,6 +94,7 @@ int main(int argc, char **argv) {
     char cmd[MAX_BUFFER_SIZE];
     sprintf(cmd, "pactl set-sink-volume %s %s%s", running_sink.name, volume,
             "%");
+    system(cmd);
   }
   return 0;
 }
