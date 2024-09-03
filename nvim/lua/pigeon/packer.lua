@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
     use("terrortylor/nvim-comment")
     use "lukas-reineke/indent-blankline.nvim"
     use 'andweeb/presence.nvim'
-    use({ "rose-pine/neovim", as = "rose-pine" })
+    use 'navarasu/onedark.nvim'
     use "joseph0x45/md_todo"
     use "joseph0x45/arduinoo"
   end)
