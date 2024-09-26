@@ -14,3 +14,7 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 # Go path setup
 export PATH=$PATH:/usr/local/go/bin:/home/$USER/go/bin
 . "$HOME/.cargo/env"
+
+# Export custom env vars
+export DOWNLOADS=~/Downloads/
+export HOME=~/
