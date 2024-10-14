@@ -3,7 +3,7 @@
 arg1=$1
 
 if [[ "$arg1" == "version" ]]; then
-    echo "tmx 0.0.1 by TheWisePigeon<https://github.com/TheWisePigeon>"
+    echo "tmx 0.0.1 by joseph<https://github.com/joseph0x45>"
 fi
 
 if [[ "$arg1" == "ls" ]]; then
