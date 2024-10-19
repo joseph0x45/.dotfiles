@@ -1,0 +1,10 @@
+- [ ] Write a simple script to manage a project ideas list from the terminal
+- [ ] Build a simple plain text note taking command line tool like zk
+- [ ] Write a XML parser
+- [ ] Write my own goofy programming language
+- [ ] Write my own Static Site Generator
+- [ ] Write my own Markdown parser and renderer
+- [ ] Write my own notification daemon
+- [ ] Use my own notification system for Skype (because Skype sucks)
+    - [ ] Write browser extension to detect changes in Skype web dom
+    - [ ] Send message to my notification server
