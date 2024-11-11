@@ -8,3 +8,5 @@
 - [ ] Use my own notification system for Skype (because Skype sucks)
     - [ ] Write browser extension to detect changes in Skype web dom
     - [ ] Send message to my notification server
+- [ ] Write update utility for Zen browser (Bash or C)
+- [ ] Write a tool to convert markdown or JSON API documentation to a static documentation website
