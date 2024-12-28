@@ -19,5 +19,7 @@ export PATH=$PATH:/usr/local/go/bin:/home/$USER/go/bin
 export DOWNLOADS=~/Downloads/
 export HOME=~/
 export ESP_IDF_HOME="/home/joseph/esp/esp-idf/"
+export PICO_SDK_PATH="/home/joseph/personal/pico-sdk"
+export PICO_TINYUSB_PATH="/home/joseph/personal/pico-sdk/lib/tinyusb"
 
 PATH="/home/joseph/perl5/bin${PATH:+:${PATH}}"; export PATH;
