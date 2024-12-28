@@ -2,8 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.3',
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.3',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use("theprimeagen/harpoon")
@@ -34,7 +33,7 @@ return require('packer').startup(function(use)
     use("terrortylor/nvim-comment")
     use "lukas-reineke/indent-blankline.nvim"
     use 'andweeb/presence.nvim'
-    use 'navarasu/onedark.nvim'
     use "joseph0x45/md_todo"
     use "joseph0x45/arduinoo"
+    use "EdenEast/nightfox.nvim"
   end)
