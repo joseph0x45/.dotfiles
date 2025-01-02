@@ -35,5 +35,5 @@ return require('packer').startup(function(use)
     use 'andweeb/presence.nvim'
     use "joseph0x45/md_todo"
     use "joseph0x45/arduinoo"
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use "AbdelrahmanDwedar/awesome-nvim-colorschemes"
   end)
