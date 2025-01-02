@@ -11,5 +11,6 @@ git config --global init.defaultBranch main
 git config --global --add --bool push.autoSetupRemote true
 git config --global user.email "zozozozeph@gmail.com"
 git config --global user.name "joseph0x45"
+git config --global core.editor "nvim"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
