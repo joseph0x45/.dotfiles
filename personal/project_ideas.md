@@ -10,3 +10,4 @@
     - [ ] Send message to my notification server
 - [ ] Write update utility for Zen browser (Bash or C)
 - [ ] Write a tool to convert markdown or JSON API documentation to a static documentation website
+- [ ] AI that tracks your habits and that you can talk to and kinda like journal
