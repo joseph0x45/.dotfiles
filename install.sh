@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 sudo ln -s /home/$USER/.dotfiles/i3 ~/.config/i3
 sudo ln -s /home/$USER/.dotfiles/tmux ~/.config/tmux
 sudo ln -s /home/$USER/.dotfiles/nvim ~/.config/nvim
