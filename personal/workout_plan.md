@@ -24,9 +24,6 @@ all 3 sets of 8 reps. With up to 1 min of rest between them
 50 squats 
 25 Suma Squats 
 25 desi baithak (a kind of Hindu squat)
-So,this is my workout.
-
-And these are for the rest todays.
 
 Warm-Up (5 Minutes)
 
