@@ -1,78 +1,49 @@
-- 5 min plank hold
-- negative push ups
-- normal push ups
-- elevated feet push ups
-- wide push ups
-- diamond push ups
+Monday - upper/pushing
 
-all 3 sets of 8 reps. With up to 1 min of rest between them 
-1 to 3 min of rest between each exercise.
+push-up 3 x 8-12
 
+incline push-up 3 x 8-12
 
-# ######################################
+plank shoulder taps 3 x 10
 
-50 push ups
-25 dand(a kind of Hindu push ups) 
-25 spate(a kind of Hindu pushups) 
-3 minute of plank 
-3 minute of mountain climber 
-200 skiping
-50 sit-ups
-25 pull ups 
-25 seated ab trucks
-25 body weight calves rises
-50 squats 
-25 Suma Squats 
-25 desi baithak (a kind of Hindu squat)
+Tuesday - lower body
 
-Warm-Up (5 Minutes)
+squats 3 x 10 - 15
 
-Light jogging or brisk walking: 2 minutes.
+glute bridges 3 x 10 - 15
 
-Dynamic stretches: 
+calf raises 3 x 10 - 15
 
-Arm swings (30 seconds).
+Wednesday - core/flexibility
 
-Leg swings (30 seconds per leg).
+forearm planks 3 x 15-30s
 
-Hip circles (30 seconds).
+dead bugs 3 x 8 each side
 
-Rest Day Workout (20–30 Minutes)
+Bird dogs 3 x 8 each side
 
-1. Light Cardio (10–15 Minutes)
+10 min stech/yoga
 
-Cycling: 10 minutes at a steady, moderate pace.
+Thursday - rest/active recovery
 
-Optional: Replace with a 2-kilometer light jog or brisk walk if you prefer running.
+walk/gentle yoga/stretch/mobility
 
-2. Mobility and Stretching (10–15 Minutes)
+Friday - upeer/pulling
 
-Spine & Core: 
+pull-up 3 x 5 - 8
 
-Cat-Cow Stretch: 8 reps.
+body weight rows 3 x 8 - 12
 
-World’s Greatest Stretch: 5 reps per side.
+plank to push - up transitions 3 x 6 - 8
 
-Lower Body: 
+Saturday - full body
 
-Hamstring Stretch: 30 seconds per leg.
+pussh-ups 3x 8 - 12
 
-Hip Flexor Stretch: 30 seconds per side.
+squats 3 x 10 - 15
 
-Glute Bridge Hold: 3 sets of 10 seconds.
+forearm plank 3 x 15 - 30 seconds
 
-Upper Body: 
+Sunday - rest/active recovery
 
-Chest Opener Stretch: 30 seconds.
-
-Shoulder Stretch: 20 seconds per side.
-
-Optional Core Stability (5 Minutes)
-
-Plank Hold: 3 sets of 20–30 seconds.
-
-Bird-Dog: 2 sets of 10 reps per side.
-
-Cool-Down (5 Minutes)
-
-Slow-paced walking or cycling for 2 minutes.
+walk/gentle yoga/stretch/mobility
