@@ -36,4 +36,4 @@ return require('packer').startup(function(use)
     use "joseph0x45/md_todo"
     use "joseph0x45/arduinoo"
     use "AbdelrahmanDwedar/awesome-nvim-colorschemes"
-  end)
+ end)
