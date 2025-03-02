@@ -12,3 +12,5 @@
 - [ ] Write a tool to convert markdown or JSON API documentation to a static documentation website
 - [ ] AI that tracks your habits and that you can talk to and kinda like journal
 - [ ] Write a terminal based flashcard thingy (In C)
+- [ ] Build a Pomodoro bot
+- [ ] Build my own GSM phone
