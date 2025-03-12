@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -21,5 +17,3 @@ export HOME=~/
 export ESP_IDF_HOME="/home/joseph/esp/esp-idf/"
 export PICO_SDK_PATH="/home/joseph/personal/pico-sdk"
 export PICO_TINYUSB_PATH="/home/joseph/personal/pico-sdk/lib/tinyusb"
-
-PATH="/home/joseph/perl5/bin${PATH:+:${PATH}}"; export PATH;
