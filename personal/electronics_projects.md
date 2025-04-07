@@ -1,0 +1,3 @@
+- [ ] Breadboard power supply
+- [ ] Macro pad that only mutes/unmutes your mic
+- [ ] The Finals Cashout station alarm
