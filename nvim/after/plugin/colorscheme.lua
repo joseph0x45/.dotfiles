@@ -1,1 +1,1 @@
-vim.cmd("colorscheme base16-black-metal-gorgoroth")
+vim.cmd("colorscheme gruvbox")
