@@ -11,6 +11,7 @@ local on_attach = function(client, bufnr)
     vim.lsp.buf.definition()
   end, opts)
 
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -49,8 +50,7 @@ cmp.setup({
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      elseif luasnip.jumpable(-1) then luasnip.jump(-1)
       else
         fallback()
       end
@@ -71,4 +71,9 @@ lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   cmd = { "clangd" }
+}
+
+lspconfig.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
