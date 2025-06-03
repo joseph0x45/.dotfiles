@@ -8,6 +8,10 @@ return require('packer').startup(function(use)
   use "theprimeagen/harpoon"
   use "m4xshen/autoclose.nvim"
   use "neovim/nvim-lspconfig"
+  use({
+    "L3MON4D3/LuaSnip",
+    tag = "v2.*",
+  })
   use {
     "hrsh7th/nvim-cmp",
     requires = {
@@ -15,7 +19,6 @@ return require('packer').startup(function(use)
       "hrsh7th/cmp-buffer",      -- Buffer completions
       "hrsh7th/cmp-path",        -- Path completions
       "hrsh7th/cmp-cmdline",     -- Command-line completions
-      "L3MON4D3/LuaSnip",        -- Snippet engine
       "saadparwaiz1/cmp_luasnip" -- Snippet completions
     },
   }
