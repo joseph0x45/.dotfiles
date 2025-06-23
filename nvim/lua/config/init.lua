@@ -1,2 +1,2 @@
-require("joseph.remap")
-require("joseph.set")
+require("config.remap")
+require("config.set")
