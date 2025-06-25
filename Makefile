@@ -1,11 +1,15 @@
 CC = gcc
 CFLAGS = -Wall -Werror -std=c17 -pedantic -Wextra
+LIBS = -lcurl
 
-build-volumectl:
-	gcc -Wall -pedantic volumectl.c
+.PHONY: all clean
+
+zen: zen.c | bin
+	@echo Building Zen
+	$(CC) $(CFLAGS) zen.c $(LIBS) -o bin/zen
 
 bin:
-	@echo Building Zen
-	$(CC) $(CFLAGS) zen.c -o bin/zen
-	@echo Building Teams-For-Linux
-	$(CC) $(CFLAGS) zen.c -o bin/teams-for-linux
+	@mkdir -p bin
+
+
+.PHONY: bin
