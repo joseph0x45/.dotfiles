@@ -3,8 +3,6 @@ sudo ln -s /home/$USER/.dotfiles/i3 ~/.config/i3
 sudo ln -s /home/$USER/.dotfiles/tmux ~/.config/tmux
 sudo ln -s /home/$USER/.dotfiles/nvim ~/.config/nvim
 sudo ln -s /home/$USER/.dotfiles/alacritty ~/.config/alacritty
-# sudo ln -s /home/$USER/.dotfiles/scripts/enable-ipv6.sh /usr/local/bin/enable-ipv6
-# sudo ln -s /home/$USER/.dotfiles/scripts/disable-ipv6.sh /usr/local/bin/disable-ipv6
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm --ipv4
 tmux source ~/.config/tmux/tmux.conf
 git config --global init.defaultBranch main

@@ -79,4 +79,10 @@ lspconfig.pylsp.setup {
   capabilities = capabilities,
 }
 
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "gopls" }
+}
+
 vim.lsp.enable("html")
