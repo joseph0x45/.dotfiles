@@ -1,12 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -Werror -std=c17 -pedantic -Wextra
-LIBS = -lcurl
 
 .PHONY: all clean
 
 zen: zen.c | bin
 	@echo Building Zen
-	$(CC) $(CFLAGS) zen.c $(LIBS) -o bin/zen
+	$(CC) $(CFLAGS) zen.c -o bin/zen
 
 bin:
 	@mkdir -p bin
