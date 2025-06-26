@@ -2,12 +2,14 @@
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define UPDATE_URL "https://app-versions-three.vercel.app/api/versions?name=zen"
 #define ZEN_PATH "/home/joseph/.local/zen"
 #define GET_VERSION_CMD                                                        \
   "/home/joseph/.local/zen --version | awk '{print $NF}' | tr -d '\\n'"
 #define GET_API_DATA_URL "curl " UPDATE_URL
+#define SET_ZEN_EXECUTABLE "chmod u+x " ZEN_PATH
 
 int main(int argc, char **argv) {
   int opt;
@@ -36,21 +38,28 @@ int main(int argc, char **argv) {
       }
       return 0;
     case 'i':
-      printf("Fetching latest version from API");
+      printf("Fetching latest version from API\n");
+      fflush(stdout);
       result = run_command(GET_API_DATA_URL, api_data, sizeof(api_data));
       if (result == -1) {
         perror("Error while fetching latest Zen version");
         return 1;
       }
-      printf("Got latest version %s\n", api_data);
-      return 0;
-      // download latest appimage
-      result = download(ZEN_PATH, ZEN_PATH);
+      char *token = strtok(api_data, " ");
+      printf("Got latest version %s\n", token);
+      token = strtok(NULL, " ");
+      printf("Downloading from %s\n", token);
+      result = download(token, ZEN_PATH);
       if (result == -1) {
         perror("Error while downloading latest Zen version");
         return 1;
       }
       // make binary executable
+      result = system(SET_ZEN_EXECUTABLE);
+      if (result == -1) {
+        perror("Error while setting Zen to be executable");
+        return 1;
+      }
       printf("Zen installed successfully");
       return 0;
     case 'u':
