@@ -4,6 +4,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+typedef struct {
+  char *tag_name;
+  char *download_url;
+} LatestVersion;
+
 int run_command(const char *cmd, char *output, size_t maxlen) {
   FILE *fp;
   char buffer[128];
@@ -30,4 +35,22 @@ int download(const char *url, const char *destination) {
   char command[PATH_MAX];
   snprintf(command, sizeof(command), "wget -O %s %s", destination, url);
   return system(command);
+}
+
+LatestVersion *get_latest_version_data(const char *api_url) {
+  LatestVersion *version = malloc(sizeof(LatestVersion));
+  if (!version) {
+    return NULL;
+  }
+  char api_data[2048];
+  int result = run_command(api_url, api_data, sizeof(api_data));
+  if (result == -1) {
+    perror("Error while fetching latest Zen version");
+    return NULL;
+  }
+  char *token = strtok(api_data, " ");
+  version->tag_name = strdup(token);
+  token = strtok(NULL, " ");
+  version->download_url = strdup(token);
+  return version;
 }
