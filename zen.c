@@ -1,4 +1,5 @@
 #include "common.h"
+#include <asm-generic/errno.h>
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,44 +16,25 @@ int get_zen_current_version(char *version) {
   int result = run_command(GET_VERSION_CMD, version, sizeof(version));
   if (result == -1) {
     perror("Error while getting Zen current version:");
-    return -1;
-  }
-  return EXIT_SUCCESS;
-}
-
-int install_zen(LatestVersion *version) {
-  printf("Downloading Zen %s\n", version->tag_name);
-  fflush(stdout);
-  int result = download(version->download_url, ZEN_PATH);
-  if (result == -1) {
-    perror("Error while downloading latest Zen version");
     return EXIT_FAILURE;
   }
-  printf("Done!\n");
-  printf("Installing Zen %s to %s\n", version->tag_name, ZEN_PATH);
-  result = system(SET_ZEN_EXECUTABLE);
-  if (result == -1) {
-    perror("Error while setting Zen to be executable");
-    return 1;
-  }
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 int main(int argc, char **argv) {
   int opt;
   char command[1024];
   int result = 0;
-  char version[100];
-  char api_data[5000];
+  char version_str[100];
   while ((opt = getopt(argc, argv, "vP:p:iu")) != -1) {
     switch (opt) {
     case 'v':
-      result = get_zen_current_version(version);
+      result = get_zen_current_version(version_str);
       if (result == -1) {
         perror("Error");
         return 1;
       }
-      printf("Mozilla Zen %s\n", version);
+      printf("Mozilla Zen %s\n", version_str);
       return 0;
     case 'P':
     case 'p':
@@ -65,47 +47,40 @@ int main(int argc, char **argv) {
         return 1;
       }
       return 0;
-    case 'i': {
+    case 'i':
       printf("Fetching latest Zen version from API\n");
       fflush(stdout);
       LatestVersion *version = get_latest_version_data(GET_API_DATA_URL);
       if (!version) {
         return EXIT_FAILURE;
       }
-      result = install_zen(version);
-      if (result == -1) {
-        return EXIT_FAILURE;
-      }
-      printf("Zen %s installed successfully\n", version->tag_name);
+      result = install(version, ZEN_PATH, SET_ZEN_EXECUTABLE, "Zen");
       free(version);
-      return 0;
-    }
-    case 'u':
+      return result;
+    case 'u': {
       printf("Fetching latest version from API\n");
       fflush(stdout);
-      LatestVersion *latest_version = get_latest_version_data(GET_API_DATA_URL);
-      result = run_command(GET_API_DATA_URL, api_data, sizeof(api_data));
-      if (result == -1) {
-        perror("Error while fetching latest Zen version");
-        return 1;
+      LatestVersion *version = get_latest_version_data(GET_API_DATA_URL);
+      if (!version) {
+        return EXIT_FAILURE;
       }
-      char *token = strtok(api_data, " ");
-      printf("Latest Zen version %s\n", token);
-      result = get_zen_current_version(version);
-      if (result == -1) {
-        return 1;
+      result = get_zen_current_version(version_str);
+      if (result == EXIT_FAILURE) {
+        return EXIT_FAILURE;
       }
-      if (strcmp(version, token) == 0) {
+      if (strcmp(version_str, version->tag_name) == 0) {
         printf("You have the latest Zen version yay \\o/\n");
         return 0;
       }
-      result = install_zen(latest_version);
-      if (result == -1) {
-        return 1;
+      result = install(version, ZEN_PATH, SET_ZEN_EXECUTABLE, "Zen");
+      if (result == EXIT_FAILURE) {
+        free(version);
+        return EXIT_FAILURE;
       }
-      printf("Zen has been updated to %s successfully!",
-             latest_version->tag_name);
-      return 0;
+      printf("Zen has been updated to %s successfully!", version->tag_name);
+      free(version);
+      return EXIT_SUCCESS;
+    }
     default:
       printf("Unrecognized option");
       return 1;
