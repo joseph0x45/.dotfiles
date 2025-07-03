@@ -45,7 +45,7 @@ LatestVersion *get_latest_version_data(const char *api_url) {
   char api_data[2048];
   int result = run_command(api_url, api_data, sizeof(api_data));
   if (result == -1) {
-    perror("Error while fetching latest Zen version");
+    perror("Error while querying API");
     return NULL;
   }
   char *token = strtok(api_data, " ");
@@ -53,4 +53,26 @@ LatestVersion *get_latest_version_data(const char *api_url) {
   token = strtok(NULL, " ");
   version->download_url = strdup(token);
   return version;
+}
+
+int install(LatestVersion *version, const char *path, const char *exec_cmd,
+            const char *app_name) {
+  printf("Downloading %s %s\n", app_name, version->tag_name);
+  fflush(stdout);
+  int result = download(version->download_url, path);
+  if (result == -1) {
+    fprintf(stderr, "Error while downloading latest %s version: ", app_name);
+    perror("");
+    return EXIT_FAILURE;
+  }
+  printf("Done!\n");
+  printf("Installing %s %s to %s\n", app_name, version->tag_name, path);
+  result = system(exec_cmd);
+  if (result == -1) {
+    fprintf(stderr, "Error while setting %s to be executable", app_name);
+    perror("");
+    return EXIT_FAILURE;
+  }
+  printf("%s installed \\o/", app_name);
+  return EXIT_SUCCESS;
 }

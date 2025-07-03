@@ -15,6 +15,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 {
   echo ""
+  echo "source \$HOME/.dotfiles/.aliases"
+  echo ""
   echo "source \$HOME/.dotfiles/.env"
   echo ""
 } >> "$HOME/.bashrc"

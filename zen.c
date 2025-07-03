@@ -17,7 +17,7 @@ int get_zen_current_version(char *version) {
     perror("Error while getting Zen current version:");
     return -1;
   }
-  return 0;
+  return EXIT_SUCCESS;
 }
 
 int install_zen(LatestVersion *version) {
@@ -26,7 +26,7 @@ int install_zen(LatestVersion *version) {
   int result = download(version->download_url, ZEN_PATH);
   if (result == -1) {
     perror("Error while downloading latest Zen version");
-    return 1;
+    return EXIT_FAILURE;
   }
   printf("Done!\n");
   printf("Installing Zen %s to %s\n", version->tag_name, ZEN_PATH);
@@ -66,16 +66,18 @@ int main(int argc, char **argv) {
       }
       return 0;
     case 'i': {
-      printf("Fetching latest version from API\n");
+      printf("Fetching latest Zen version from API\n");
       fflush(stdout);
-      result = run_command(GET_API_DATA_URL, api_data, sizeof(api_data));
-      if (result == -1) {
-        perror("Error while fetching latest Zen version");
-        return 1;
-      }
       LatestVersion *version = get_latest_version_data(GET_API_DATA_URL);
+      if (!version) {
+        return EXIT_FAILURE;
+      }
       result = install_zen(version);
+      if (result == -1) {
+        return EXIT_FAILURE;
+      }
       printf("Zen %s installed successfully\n", version->tag_name);
+      free(version);
       return 0;
     }
     case 'u':
