@@ -1,5 +1,4 @@
 #include "common.h"
-#include <asm-generic/errno.h>
 #include <getopt.h>
 #include <stdio.h>
 #include <stdlib.h>
