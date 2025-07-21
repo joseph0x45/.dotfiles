@@ -1,7 +1,6 @@
 nvim/plugin/packer_compiled.lua
 plugins
 *.out
-.env.local
 .local.env
 bin/
 .cache
