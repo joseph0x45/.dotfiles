@@ -32,6 +32,5 @@ return require('packer').startup(function(use)
     end, }
   use("terrortylor/nvim-comment")
   use "lukas-reineke/indent-blankline.nvim"
-  use 'andweeb/presence.nvim'
   use "joseph0x45/md_todo"
 end)
