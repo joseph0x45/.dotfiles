@@ -33,4 +33,5 @@ return require('packer').startup(function(use)
   use("terrortylor/nvim-comment")
   use "lukas-reineke/indent-blankline.nvim"
   use "joseph0x45/md_todo"
+  use "i3d/vim-jimbothemes"
 end)
