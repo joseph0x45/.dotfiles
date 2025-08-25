@@ -5,7 +5,6 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.3',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  use("theprimeagen/harpoon")
   use("m4xshen/autoclose.nvim")
   use {
     'VonHeikemen/lsp-zero.nvim',
