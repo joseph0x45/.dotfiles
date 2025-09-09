@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
   use("terrortylor/nvim-comment")
   use "lukas-reineke/indent-blankline.nvim"
   use "joseph0x45/md_todo"
-  use "andweeb/presence.nvim"
   use {
       "ThePrimeagen/harpoon",
       branch = "harpoon2",
