@@ -104,7 +104,8 @@ vim.pack.add({
 require("blink.cmp").setup({
 	keymap = { preset = 'enter' },
 	appearance = {
-		nerd_font_variant = 'mono'
+		nerd_font_variant = 'mono',
+    highlight_ns = 0,
 	},
 	completion = { documentation = { auto_show = true } },
 	sources = {
@@ -125,6 +126,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {},
 })
 
+vim.cmd[[set completeopt+=menuone,noselect,popup]]
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.keymap.set("n", "<leader>vca", function()
@@ -165,3 +167,5 @@ vim.diagnostic.config({
 
 vim.lsp.config("gopls", { on_attach = on_attach })
 vim.lsp.config("pylsp", { on_attach = on_attach })
+vim.lsp.config("html-lsp", { on_attach = on_attach })
+
