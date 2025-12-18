@@ -31,11 +31,22 @@ nnoremap <C-S> <Esc>:w<CR>
 inoremap <C-S> <Esc>:w<CR>
 vnoremap <C-S> <Esc>:w<CR>
 
+if !has('gui_running')
+    execute "set <A-w>=\ew"
+endif
+nnoremap <silent> <A-w>h :wincmd h<CR>
+nnoremap <silent> <A-w>j :wincmd j<CR>
+nnoremap <silent> <A-w>k :wincmd k<CR>
+nnoremap <silent> <A-w>l :wincmd l<CR>
+vnoremap <leader>y :w !xclip -selection clipboard<CR><CR>
+
 let g:lsp_document_highlight_enabled = 0
 let g:lsp_document_code_action_signs_text = '•'
 "let g:loaded_matchparen = 1
 highlight MatchParen ctermbg=darkgrey guibg=grey
 
+" ALE https://github.com/dense-analysis/ale
+let g:ale_completion_enabled = 1
 if executable('pylsp')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'pylsp',
@@ -49,6 +60,14 @@ if executable('gopls')
         \ 'name': 'gopls',
         \ 'cmd': {server_info->['gopls']},
         \ 'allowlist': ['go'],
+        \ })
+endif
+
+if executable('emmet-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'emmet-language-server',
+        \ 'cmd': {server_info->['emmet-language-server', '--stdio']},
+        \ 'allowlist': ['html'],
         \ })
 endif
 

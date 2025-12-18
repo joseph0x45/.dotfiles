@@ -101,18 +101,17 @@ require('nvim-treesitter.configs').setup {
 vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.6.0" },
 })
--- require("blink.cmp").setup({
--- 	keymap = { preset = 'enter' },
--- 	appearance = {
--- 		nerd_font_variant = 'mono',
---     highlight_ns = 0,
--- 	},
--- 	completion = { documentation = { auto_show = true } },
--- 	sources = {
--- 		default = { 'lsp', 'path', 'snippets', 'buffer' },
--- 	},
--- 	fuzzy = { implementation = "prefer_rust" }
--- })
+require("blink.cmp").setup({
+	keymap = { preset = 'enter' },
+	appearance = {
+		nerd_font_variant = 'mono',
+	},
+	completion = { documentation = { auto_show = true } },
+	sources = {
+		default = { 'lsp', 'path', 'snippets', 'buffer' },
+	},
+	fuzzy = { implementation = "prefer_rust" }
+})
 -- blink
 
 -- LSP --
