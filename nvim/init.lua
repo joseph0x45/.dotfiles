@@ -7,11 +7,9 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
     vim.opt_local.softtabstop = 4
   end,
 })
-
-vim.api.nvim_create_autocmd("FileType", {
-  callback = function(ev)
-    pcall(vim.treesitter.start, ev.buf)
-  end
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'go', 'svelte' },
+  callback = function() vim.treesitter.start() end,
 })
 
 vim.g.mapleader = " "
@@ -63,10 +61,13 @@ vim.pack.add({
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/joseph0x45/md_todo" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+	{ src = "https://github.com/terrortylor/nvim-comment" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
 require("autoclose").setup()
 require("ibl").setup()
+require('nvim_comment').setup()
 -- md_todo
 local todo = require("md_todo")
 vim.keymap.set("n", "<leader>md", function ()
@@ -85,7 +86,14 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 -- telescope
+-- treesitter
+require'nvim-treesitter'.setup {
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site'
+}
+-- treesitter
 
+-- blink
 vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.6.0" },
 })
@@ -100,6 +108,7 @@ require("blink.cmp").setup({
 	},
 	fuzzy = { implementation = "prefer_rust" }
 })
+-- blink
 
 -- LSP --
 vim.pack.add({
@@ -127,12 +136,6 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(ev)
-    vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, { autotrigger = false })
-  end,
-})
 
 vim.diagnostic.config({
   virtual_text = true,
