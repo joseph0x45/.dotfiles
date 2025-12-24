@@ -8,6 +8,12 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(ev)
+    pcall(vim.treesitter.start, ev.buf)
+  end
+})
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -57,13 +63,10 @@ vim.pack.add({
 	{ src = "https://github.com/m4xshen/autoclose.nvim" },
 	{ src = "https://github.com/joseph0x45/md_todo" },
 	{ src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-	{ src = "https://github.com/terrortylor/nvim-comment" },
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
 require("autoclose").setup()
 require("ibl").setup()
-require('nvim_comment').setup()
 -- md_todo
 local todo = require("md_todo")
 vim.keymap.set("n", "<leader>md", function ()
@@ -82,37 +85,6 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 -- telescope
--- treesitter
-require('nvim-treesitter.configs').setup {
-  ensure_installed = {},
-  autotag = {
-    enable = true,
-  },
-  sync_install = false,
-  auto_install = false,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
--- treesitter
-
--- blink
-vim.pack.add({
-	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.6.0" },
-})
-require("blink.cmp").setup({
-	keymap = { preset = 'enter' },
-	appearance = {
-		nerd_font_variant = 'mono',
-	},
-	completion = { documentation = { auto_show = true } },
-	sources = {
-		default = { 'lsp', 'path', 'snippets', 'buffer' },
-	},
-	fuzzy = { implementation = "prefer_rust" }
-})
--- blink
 
 -- LSP --
 vim.pack.add({
@@ -167,4 +139,3 @@ vim.diagnostic.config({
 vim.lsp.config("gopls", { on_attach = on_attach })
 vim.lsp.config("pylsp", { on_attach = on_attach })
 vim.lsp.config("html-lsp", { on_attach = on_attach })
-
