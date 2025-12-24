@@ -6,7 +6,8 @@
     },
     "blink.cmp": {
       "rev": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8",
-      "src": "https://github.com/Saghen/blink.cmp"
+      "src": "https://github.com/Saghen/blink.cmp",
+      "version": "'v1.6.0'"
     },
     "indent-blankline.nvim": {
       "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",

@@ -86,6 +86,21 @@ end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
 -- telescope
 
+vim.pack.add({
+	{ src = "https://github.com/Saghen/blink.cmp", version = "v1.6.0" },
+})
+require("blink.cmp").setup({
+	keymap = { preset = 'enter' },
+	appearance = {
+		nerd_font_variant = 'mono',
+	},
+	completion = { documentation = { auto_show = true } },
+	sources = {
+		default = { 'lsp', 'path', 'snippets', 'buffer' },
+	},
+	fuzzy = { implementation = "prefer_rust" }
+})
+
 -- LSP --
 vim.pack.add({
 	{ src = "https://github.com/mason-org/mason.nvim.git" },
@@ -112,6 +127,12 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(ev)
+    vim.lsp.completion.enable(true, ev.data.client_id, ev.buf, { autotrigger = false })
+  end,
+})
 
 vim.diagnostic.config({
   virtual_text = true,
