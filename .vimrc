@@ -20,9 +20,9 @@ set nohlsearch                 " do not highlight search results
 set incsearch                  " show match as you type
 set isfname+=@-@               " allow @-@ in file names
 set updatetime=50              " faster update for CursorHold and plugins
+set matchparen off
 "set signcolumn=no              " temporary until I find a good color scheme
 highlight SignColumn ctermbg=NONE guibg=NONE
-
 
 
 " Keymaps
@@ -40,36 +40,16 @@ nnoremap <silent> <A-w>k :wincmd k<CR>
 nnoremap <silent> <A-w>l :wincmd l<CR>
 vnoremap <leader>y :w !xclip -selection clipboard<CR><CR>
 
-let g:lsp_document_highlight_enabled = 0
-let g:lsp_document_code_action_signs_text = '•'
-"let g:loaded_matchparen = 1
-highlight MatchParen ctermbg=darkgrey guibg=grey
+" plugins
+call plug#begin()
 
-" ALE https://github.com/dense-analysis/ale
-let g:ale_completion_enabled = 1
-if executable('pylsp')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pylsp',
-        \ 'cmd': {server_info->['pylsp']},
-        \ 'allowlist': ['python'],
-        \ })
-endif
+Plug 'evanleck/vim-svelte'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'allowlist': ['go'],
-        \ })
-endif
-
-if executable('emmet-language-server')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'emmet-language-server',
-        \ 'cmd': {server_info->['emmet-language-server', '--stdio']},
-        \ 'allowlist': ['html'],
-        \ })
-endif
+call plug#end()
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
@@ -81,7 +61,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> K <plug>(lsp-hover)
     nmap <buffer> <leader>vf  <plug>(lsp-document-format)
     nmap <buffer> <leader>vca <plug>(lsp-code-action-float)
-    
+
 endfunction
 
 augroup lsp_install
@@ -89,3 +69,5 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+autocmd BufNewFile,BufRead *.svelte set filetype=svelte
