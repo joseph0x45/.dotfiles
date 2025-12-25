@@ -3,7 +3,6 @@ require("options")
 require("autocmds")
 require("autoclose").setup()
 require("ibl").setup()
-require("telescope")
 require("nvim-treesitter.configs").setup {
   ensure_installed = {},
   sync_install = false,
@@ -13,3 +12,5 @@ require("nvim-treesitter.configs").setup {
     additional_vim_regex_highlighting = false
   }
 }
+require("telescope")
+require("lsp")

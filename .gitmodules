@@ -13,3 +13,39 @@
 [submodule "nvim/pack/vendor/start/nvim-treesitter"]
 	path = nvim/pack/vendor/start/nvim-treesitter
 	url = https://github.com/joseph0x45/nvim-treesitter
+[submodule "nvim/pack/vendor/start/mason.nvim"]
+	path = nvim/pack/vendor/start/mason.nvim
+	url = https://github.com/joseph0x45/mason.nvim
+[submodule "nvim/pack/vendor/start/mason-lspconfig.nvim"]
+	path = nvim/pack/vendor/start/mason-lspconfig.nvim
+	url = https://github.com/joseph0x45/mason-lspconfig.nvim
+[submodule "nvim/pack/vendor/start/lsp-zero.nvim"]
+	path = nvim/pack/vendor/start/lsp-zero.nvim
+	url = https://github.com/joseph0x45/lsp-zero.nvim
+[submodule "nvim/pack/vendor/start/nvim-lspconfig"]
+	path = nvim/pack/vendor/start/nvim-lspconfig
+	url = https://github.com/joseph0x45/nvim-lspconfig
+[submodule "nvim/pack/vendor/start/nvim-cmp"]
+	path = nvim/pack/vendor/start/nvim-cmp
+	url = https://github.com/joseph0x45/nvim-cmp
+[submodule "nvim/pack/vendor/start/cmp-buffer"]
+	path = nvim/pack/vendor/start/cmp-buffer
+	url = https://github.com/joseph0x45/cmp-buffer
+[submodule "nvim/pack/vendor/start/cmp-path"]
+	path = nvim/pack/vendor/start/cmp-path
+	url = https://github.com/joseph0x45/cmp-path
+[submodule "nvim/pack/vendor/start/cmp_luasnip"]
+	path = nvim/pack/vendor/start/cmp_luasnip
+	url = https://github.com/joseph0x45/cmp_luasnip
+[submodule "nvim/pack/vendor/start/cmp-nvim-lsp"]
+	path = nvim/pack/vendor/start/cmp-nvim-lsp
+	url = https://github.com/joseph0x45/cmp-nvim-lsp
+[submodule "nvim/pack/vendor/start/cmp-nvim-lua"]
+	path = nvim/pack/vendor/start/cmp-nvim-lua
+	url = https://github.com/joseph0x45/cmp-nvim-lua
+[submodule "nvim/pack/vendor/start/LuaSnip"]
+	path = nvim/pack/vendor/start/LuaSnip
+	url = https://github.com/joseph0x45/LuaSnip
+[submodule "nvim/pack/vendor/start/friendly-snippets"]
+	path = nvim/pack/vendor/start/friendly-snippets
+	url = https://github.com/joseph0x45/friendly-snippets
