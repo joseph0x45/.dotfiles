@@ -1,4 +1,5 @@
 syntax on
+colorscheme quiet
 
 let mapleader = " "
 set guicursor=                 " no fancy cursor
@@ -39,6 +40,9 @@ nnoremap <silent> <A-w>k :wincmd k<CR>
 nnoremap <silent> <A-w>l :wincmd l<CR>
 vnoremap <leader>y :w !xclip -selection clipboard<CR><CR>
 
+let g:lsp_document_highlight_enabled = 0
+let g:lsp_signs_code_action = {'test': ''}
+
 " plugins
 call plug#begin()
 
@@ -58,7 +62,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    nmap <buffer> <leader>vf  <plug>(lsp-document-format)
+    nmap <buffer> <leader>f  <plug>(lsp-document-format)
     nmap <buffer> <leader>vca <plug>(lsp-code-action-float)
 
 endfunction
