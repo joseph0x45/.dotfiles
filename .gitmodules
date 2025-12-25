@@ -4,3 +4,9 @@
 [submodule "nvim/pack/vendor/start/indent-blankline.nvim"]
 	path = nvim/pack/vendor/start/indent-blankline.nvim
 	url = https://github.com/joseph0x45/indent-blankline.nvim
+[submodule "nvim/pack/vendor/start/telescope.nvim"]
+	path = nvim/pack/vendor/start/telescope.nvim
+	url = https://github.com/joseph0x45/telescope.nvim
+[submodule "nvim/pack/vendor/start/plenary.nvim"]
+	path = nvim/pack/vendor/start/plenary.nvim
+	url = https://github.com/joseph0x45/plenary.nvim
