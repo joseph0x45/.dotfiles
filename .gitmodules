@@ -10,3 +10,6 @@
 [submodule "nvim/pack/vendor/start/plenary.nvim"]
 	path = nvim/pack/vendor/start/plenary.nvim
 	url = https://github.com/joseph0x45/plenary.nvim
+[submodule "nvim/pack/vendor/start/nvim-treesitter"]
+	path = nvim/pack/vendor/start/nvim-treesitter
+	url = https://github.com/joseph0x45/nvim-treesitter
