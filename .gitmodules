@@ -1,0 +1,3 @@
+[submodule "nvim/pack/vendor/start/autoclose.nvim"]
+	path = nvim/pack/vendor/start/autoclose.nvim
+	url = https://github.com/joseph0x45/autoclose.nvim
