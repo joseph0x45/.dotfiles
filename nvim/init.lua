@@ -1,4 +1,5 @@
 require("keymaps")
 require("options")
 require("autocmds")
--- require("autoclose").setup()
+require("autoclose").setup()
+require("ibl").setup()

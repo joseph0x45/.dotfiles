@@ -1,3 +1,6 @@
 [submodule "nvim/pack/vendor/start/autoclose.nvim"]
 	path = nvim/pack/vendor/start/autoclose.nvim
 	url = https://github.com/joseph0x45/autoclose.nvim
+[submodule "nvim/pack/vendor/start/indent-blankline.nvim"]
+	path = nvim/pack/vendor/start/indent-blankline.nvim
+	url = https://github.com/joseph0x45/indent-blankline.nvim
