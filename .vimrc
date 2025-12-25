@@ -20,7 +20,6 @@ set nohlsearch                 " do not highlight search results
 set incsearch                  " show match as you type
 set isfname+=@-@               " allow @-@ in file names
 set updatetime=50              " faster update for CursorHold and plugins
-set matchparen off
 "set signcolumn=no              " temporary until I find a good color scheme
 highlight SignColumn ctermbg=NONE guibg=NONE
 
