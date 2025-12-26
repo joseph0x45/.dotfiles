@@ -49,3 +49,6 @@
 [submodule "nvim/pack/vendor/start/friendly-snippets"]
 	path = nvim/pack/vendor/start/friendly-snippets
 	url = https://github.com/joseph0x45/friendly-snippets
+[submodule "nvim/pack/vendor/start/mini.pick"]
+	path = nvim/pack/vendor/start/mini.pick
+	url = https://github.com/joseph0x45/mini.pick
