@@ -14,3 +14,4 @@ require("nvim-treesitter.configs").setup {
 }
 require("browsing")
 require("lsp")
+require("md_todo")
