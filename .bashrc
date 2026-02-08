@@ -11,3 +11,4 @@ source $HOME/.dotfiles/.env
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/joseph/go/bin
+. "$HOME/.cargo/env"
