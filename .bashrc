@@ -9,6 +9,8 @@ source $HOME/.dotfiles/.aliases
 
 source $HOME/.dotfiles/.env
 
+source $HOME/.dotfiles/.bashfunctions.sh
+
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/joseph/go/bin
 . "$HOME/.cargo/env"
