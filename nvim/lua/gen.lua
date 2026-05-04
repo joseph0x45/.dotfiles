@@ -3,7 +3,7 @@ vim.api.nvim_create_user_command("GenTestFlow", function(opts)
 
     local property = name
     local vars_key = name
-    local data_test = "grund_der_antragsstellung_" .. name
+    local data_test = "_" .. name
 
     local output = table.concat({
         "@property",
@@ -16,7 +16,7 @@ vim.api.nvim_create_user_command("GenTestFlow", function(opts)
         "    )",
         "",
         "def answer_" .. name .. "(self) -> bool:",
-        "    suffix = aw_utils.bool_to_english(self." .. property .. ")",
+        "    suffix = aw_utils.bool_to_english(self.value_" .. property .. ")",
         '    data_test = f"' .. data_test .. '-{suffix}"',
         "    locator = f\"label[data-test='{data_test}'] span\"",
         "",
