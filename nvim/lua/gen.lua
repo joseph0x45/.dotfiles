@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command("GenTestFlow", function(opts)
 
     local output = table.concat({
         "@property",
-        "def " .. property .. "(self) -> bool:",
+        "def value_" .. property .. "(self) -> bool:",
         "    return self.vars.setdefault(",
         '        "' .. vars_key .. '",',
         "        True,",
@@ -25,11 +25,11 @@ vim.api.nvim_create_user_command("GenTestFlow", function(opts)
         "        locator,",
         '        description="' .. name .. '"',
         "    )",
-        "    return self." .. property,
+        "    return self.value_" .. property,
         "",
         "def step_" .. name .. "(self):",
         "    self.answer_" .. name .. "()",
-        "    if self." .. property .. ":",
+        "    if self.value_" .. property .. ":",
         "        pass",
         "    else:",
         "        pass",
