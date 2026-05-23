@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command("GenTestFlow", function(opts)
         '        "' .. vars_key .. '",',
         "        True,",
         "        False,",
-        "        aw_utils.aw_random_bool(self)",
+        "        aw_utils.aw_random_bool()",
         "    )",
         "",
         "def answer_" .. name .. "(self) -> bool:",

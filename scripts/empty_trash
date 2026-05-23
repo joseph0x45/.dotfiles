@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+rm /home/joseph/.local/share/Trash/info/* /home/joseph/.local/share/Trash/files/*

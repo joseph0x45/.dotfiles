@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-snap run spotify
+flatpak run com.spotify.Client
