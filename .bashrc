@@ -15,3 +15,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/joseph/go/bin
 export PATH=$PATH:/home/joseph/.local/bin
 . "$HOME/.cargo/env"
+
+# opencode
+export PATH=/home/joseph/.opencode/bin:$PATH
