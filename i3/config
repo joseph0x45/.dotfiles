@@ -21,6 +21,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # Start Applications
+exec --no-startup-id dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
 exec --no-startup-id alacritty --working-directory /home/$USER/ -e tmux new-session -s home
 exec xset r rate 400 20
 bindsym $mod+Shift+Print --release exec --no-startup-id flameshot
