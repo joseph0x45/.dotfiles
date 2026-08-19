@@ -15,3 +15,5 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/home/joseph/go/bin
 export PATH=$PATH:/home/joseph/.local/bin
 . "$HOME/.cargo/env"
+export PATH=/opt/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH

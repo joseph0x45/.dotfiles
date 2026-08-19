@@ -3,5 +3,5 @@ sqm_env(){
 }
 
 robot_env(){
-  . /home/joseph/work/env/bin/activate
+  . /home/joseph/.venvs/robot_env/bin/activate
 }
